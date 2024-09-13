@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Клиенты</title>
+    <link rel="stylesheet" href="{% static 'main/css/clients.css' %}">
+</head>
+<body style="background-image: url('{% static 'main/img/background1.jpeg' %}');">
+    <header>
+        <div class="header">
+            <img src="{% static 'main/img/logo.png' %}" alt="Логотип" class="logo">
+        </div>
+    </header>
+
+    <h1 class="clients-title">Клиенты</h1>
+
+    <!-- Список клиентов с количеством посещений -->
+    <ul class="clients-list">
+        {% for client in clients %}
+            <li>
+                <span>Имя: {{ client.name }}</span> - 
+                <span>Email: {{ client.email }}</span> - 
+                <span>Телефон: {{ client.phone }}</span> - 
+                <span>Количество посещений: {{ client.visit_count }}</span>
+                <a href="{% url 'clients_change' client.id %}" class="edit-button">Редактировать</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="button-container">
+        <a href="{% url 'clients_change' 0 %}" class="change-button">Добавить нового клиента</a>
+        <a href="/" class="back-button">Отмена</a>
+    </div>
+
+    <script src="{% static 'main/js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/moihiki.css' %}">
+    <title>Мойщики</title>
+</head>
+<body style="background-image: url('{% static 'main/img/background1.jpeg' %}');">
+    <header>
+        <div class="header">
+            <img src="{% static 'main/img/logo.png' %}" alt="Логотип" class="logo">
+        </div>
+    </header>
+
+    <h1 class="moihiki-title">Мойщики</h1>
+
+    <!-- Список мойщиков с ссылками на их редактирование -->
+    <ul class="moihiki-list">
+        {% for moihik in moihiki %}
+            <li>
+                <span>Имя: {{ moihik.name }}</span> - 
+                <span>Телефон: {{ moihik.phone }}</span> - 
+                <span>Email: {{ moihik.email }}</span>  <!-- Добавляем поле email -->
+                <a href="{% url 'moihiki_change' moihik.id %}" class="edit-button">Редактировать</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="button-container">
+        <a href="{% url 'moihiki_change' 0 %}" class="change-button">Добавить нового мойщика</a>
+        <a href="/" class="back-button">Отмена</a>
+    </div>
+
+    <script src="{% static 'main/js/script.js' %}"></script>
+</body>
+</html>

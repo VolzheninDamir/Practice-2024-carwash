@@ -1,0 +1,154 @@
+body {
+    background-size: cover; /* Фон будет покрывать весь экран */
+    background-repeat: no-repeat; /* Без повторения фона */
+    background-position: center top; /* Центрируем фон */
+    background-attachment: fixed; /* Фон фиксируется при прокрутке */
+    color: white;
+    margin: 0;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: auto;
+}
+
+.slogan-container {
+    margin-top: 30px;
+    padding-left: 100px;
+}
+
+.slogan {
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    font-size: 52px; 
+    color: #FFFFFF; 
+}
+
+.button-container {
+    margin-left: 100px; /* Отступ для кнопок */
+}
+
+.price-button,
+.sale-button {
+    display: block; /* Изменяем на блочный элемент */
+    margin-top: 30px; /* Отступ сверху между кнопками */
+    padding: 15px 30px; /* Внутренние отступы кнопки */
+    background-color: #D44606; /* Оранжевый цвет фона */
+    border: none; /* Убираем рамку */
+    border-radius: 45px; /* Закруглённые края */
+    color: white; /* Цвет текста на кнопке */
+    font-size: 32px; /* Размер шрифта на кнопке */
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    cursor: pointer; /* Указатель курсора при наведении */
+    width: 250px; /* Фиксированная ширина для одинакового размера */
+}
+
+.price-button:hover,
+.sale-button:hover {
+    background-color: #8e2d00; /* Более тёмный оттенок при наведении */
+}
+
+.button-image {
+    width: 280px; /* Ширина кнопки */
+    height: 170px; /* Высота кнопки */
+    background-size: cover; /* Обеспечиваем полное покрытие фона */
+    border-radius: 20px; /* Закругленные края */
+    display: flex;
+    position: absolute; /* Абсолютное позиционирование */
+    right: 90px; /* Отступ справа */
+    color: white; /* Цвет текста */
+    font-size: 48px; /* Размер шрифта */
+    cursor: pointer; /* Курсор при наведении */
+    border: 2px solid white; /* Белая обводка */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень для эффекта глубины */
+}
+
+.button-text {
+    position: absolute; /* Позиционируем текст абсолютно */
+    bottom: 10px; /* Отступ от нижней грани кнопки */
+    left: 10px; /* Отступ от левой грани кнопки */
+}
+
+.arrow {
+    position: absolute; /* Позиционируем стрелку абсолютно */
+    bottom: 10px; /* Отступ от нижней грани кнопки */
+    right: 10px; /* Отступ от правой грани кнопки */
+    font-size: 48px; /* Размер стрелки */
+}
+
+/* Эффект при наведении */
+.button-image:hover {
+    opacity: 0.8; /* Изменение прозрачности при наведении */
+}
+
+#pricelist-popup,
+#sale-popup {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование по горизонтали и вертикали */
+    width: 80%;
+    max-width: 400px; /* Уменьшенная максимальная ширина для картинки */
+    /*background-color: white;*/
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 100; /* Устанавливаем z-index для показа над другими элементами */
+}
+
+#pricelist-popup.hidden,
+#sale-popup.hidden {
+    display: none; /* Скрываем по умолчанию */
+}
+
+#pricelist-popup img,
+#sale-popup img {
+    max-width: 100%; /* Уменьшаем ширину картинки */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    border: 4px solid white; /* Белая обводка */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень для эффекта глубины */
+    border-radius: 20px; /* Закругленные края */
+}
+
+#close-popup,
+#close-sale-popup {
+    display: block; /* Делаем кнопку блочным элементом */
+    margin-left: auto; /* Автоматический отступ слева */
+    margin-right: auto; /* Автоматический отступ справа */
+    border: 4px solid white; /* Белая обводка */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень для эффекта глубины */
+}
+
+.price-button-close,
+.sale-button-close {
+    display: block; /* Изменяем на блочный элемент */
+    margin-top: 30px; /* Отступ сверху между кнопками */
+    padding: 15px 30px; /* Внутренние отступы кнопки */
+    background-color: #8E6A34; /* Оранжевый цвет фона */
+    border: none; /* Убираем рамку */
+    border-radius: 45px; /* Закруглённые края */
+    color: white; /* Цвет текста на кнопке */
+    font-size: 32px; /* Размер шрифта на кнопке */
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    cursor: pointer; /* Указатель курсора при наведении */
+    width: 250px; /* Фиксированная ширина для одинакового размера */
+}
+
+.price-button-close:hover,
+.sale-button-close:hover {
+    background-color: #684c21; /* Более тёмный оттенок при наведении */
+}
+
+

@@ -1,0 +1,83 @@
+body {
+    background-size: cover; /* Фон будет покрывать весь экран */
+    background-repeat: no-repeat; /* Без повторения фона */
+    background-position: center bottom; /* Центрируем фон */
+    background-attachment: fixed; /* Фон фиксируется при прокрутке */
+    color: white;
+    margin: 0;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: auto;
+}
+
+h1.moihiki-title {
+    font-size: 50px;
+    font-family: 'Roboto Slab';
+    font-weight: 600;
+    text-align: center; /* Выравнивание по центру */
+    position: fixed; /*  Фиксируем заголовок  */
+    top: -10px; /*  Отступ от верхнего края  */
+    left: 50%; /*  Горизонтальное центрирование  */
+    transform: translateX(-50%); /*  Точное центрирование по горизонтали  */
+}
+
+.button-container {
+    display: flex; /* Используем flexbox для горизонтального выравнивания кнопок */
+    justify-content: flex-start; /* Выравнивание по левому краю */
+    margin-left: 50px; /* Отступ для контейнера кнопок */
+    margin-top: 430px; /* Отступ сверху для расположения ниже центральной линии */
+}
+
+.back-button {
+    display: block; /* Изменяем на блочный элемент */
+    margin-right: 20px; /* Отступ сверху между кнопками */
+    padding: 15px 30px; /* Внутренние отступы кнопки */
+    background-color: #D44606; /* Оранжевый цвет фона */
+    border: none; /* Убираем рамку */
+    border-radius: 45px; /* Закруглённые края */
+    color: white; /* Цвет текста на кнопке */
+    font-size: 32px; /* Размер шрифта на кнопке */
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    cursor: pointer; /* Указатель курсора при наведении */
+    width: 250px; /* Фиксированная ширина для одинакового размера */
+}
+
+.save-button {
+    display: block; /* Изменяем на блочный элемент */
+    margin-right: 20px; /* Отступ сверху между кнопками */
+    padding: 15px 30px; /* Внутренние отступы кнопки */
+    background-color: #D44606; /* Оранжевый цвет фона */
+    border: none; /* Убираем рамку */
+    border-radius: 45px; /* Закруглённые края */
+    color: white; /* Цвет текста на кнопке */
+    font-size: 32px; /* Размер шрифта на кнопке */
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    cursor: pointer; /* Указатель курсора при наведении */
+    width: 250px; /* Фиксированная ширина для одинакового размера */
+}
+
+.back-button:hover {
+    background-color: #8e2d00; /* Более тёмный оттенок при наведении */
+}
+
+.save-button:hover {
+    background-color: #8e2d00; /* Более тёмный оттенок при наведении */
+}
+
+.back-button a {
+    text-decoration: none;
+    color: inherit;
+}
